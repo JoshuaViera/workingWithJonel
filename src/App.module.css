@@ -1,5 +1,5 @@
 /**
- * App Component Styles
+ * App Component Styles - Updated for Phase 2
  */
 
 .app {
@@ -11,6 +11,7 @@
     var(--color-background-dark) 0%,
     #0f0f1e 100%
   );
+  position: relative;
 }
 
 /* Header */
@@ -19,9 +20,12 @@
   border-bottom: 2px solid var(--color-primary-orange);
   padding: var(--spacing-lg) 0;
   box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
 }
 
-.header .container {
+.headerContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,6 +39,19 @@
   color: var(--color-primary-orange);
   text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
   margin: 0;
+  line-height: 1;
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-scouter-green);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
 }
 
 .currencyDisplay {
@@ -42,6 +59,15 @@
   padding: var(--spacing-sm) var(--spacing-lg);
   border-radius: var(--radius-lg);
   border: 2px solid var(--color-scouter-green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.currencyLabel {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  text-transform: uppercase;
 }
 
 .currencyAmount {
@@ -51,19 +77,44 @@
   font-weight: var(--font-weight-bold);
 }
 
+/* Error Banner */
+.errorBanner {
+  background: rgba(244, 67, 54, 0.2);
+  border-bottom: 2px solid var(--color-error);
+  padding: var(--spacing-md) 0;
+  text-align: center;
+  color: var(--color-error);
+  font-weight: var(--font-weight-bold);
+  animation: slideInFromTop var(--duration-fast) var(--ease-out);
+}
+
 /* Main Content */
 .main {
   flex: 1;
   padding: var(--spacing-xxl) 0;
 }
 
-.gameArea {
+.gameLayout {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-xxl);
+  margin-bottom: var(--spacing-xxl);
 }
 
-.characterSection,
+.characterSection {
+  background: rgba(45, 45, 68, 0.5);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-card-border);
+}
+
+.sidebar {
+  background: rgba(45, 45, 68, 0.5);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-card-border);
+}
+
 .foodSection {
   background: rgba(45, 45, 68, 0.5);
   padding: var(--spacing-xl);
@@ -71,17 +122,13 @@
   border: 1px solid var(--color-card-border);
 }
 
-.characterSection h2,
-.foodSection h2 {
+.sectionTitle {
+  font-family: var(--font-primary);
   color: var(--color-primary-orange);
-  margin-bottom: var(--spacing-lg);
-}
-
-.placeholder {
-  text-align: center;
-  color: var(--text-secondary);
-  font-style: italic;
-  padding: var(--spacing-xxl);
+  margin: 0 0 var(--spacing-lg) 0;
+  font-size: var(--font-size-xl);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 /* Footer */
@@ -90,6 +137,7 @@
   padding: var(--spacing-lg) 0;
   text-align: center;
   border-top: 1px solid var(--color-card-border);
+  margin-top: auto;
 }
 
 .footer p {
@@ -98,41 +146,20 @@
   font-size: var(--font-size-sm);
 }
 
-/* Loading State */
-.loadingContainer {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-lg);
-  background: linear-gradient(
-    135deg,
-    var(--color-background-dark) 0%,
-    #0f0f1e 100%
-  );
-}
-
-.loadingContainer p {
-  font-family: var(--font-primary);
-  font-size: var(--font-size-lg);
-  color: var(--color-scouter-green);
-}
-
 /* Responsive Design */
-@media (min-width: 768px) {
-  .title {
-    font-size: var(--font-size-huge);
-  }
-
-  .gameArea {
+@media (min-width: 1024px) {
+  .gameLayout {
     grid-template-columns: 2fr 1fr;
   }
 }
 
 @media (max-width: 767px) {
-  .header .container {
-    justify-content: center;
+  .header {
+    padding: var(--spacing-md) 0;
+  }
+
+  .headerContent {
+    flex-direction: column;
     text-align: center;
   }
 
@@ -140,8 +167,42 @@
     font-size: var(--font-size-xl);
   }
 
-  .currencyDisplay {
+  .subtitle {
+    font-size: var(--font-size-md);
+  }
+
+  .headerActions {
     width: 100%;
-    text-align: center;
+    justify-content: center;
+  }
+
+  .currencyDisplay {
+    flex-direction: row;
+    gap: var(--spacing-sm);
+  }
+
+  .main {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .characterSection,
+  .sidebar,
+  .foodSection {
+    padding: var(--spacing-md);
+  }
+
+  .sectionTitle {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .headerActions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .headerActions > * {
+    width: 100%;
   }
 }
