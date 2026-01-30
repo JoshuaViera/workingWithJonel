@@ -1,0 +1,118 @@
+/**
+ * Dragon Ball Power-Up Diner
+ * CSS Custom Properties (Variables)
+ */
+
+:root {
+  /* Colors - Dragon Ball Theme */
+  --color-primary-orange: #ff6b35;
+  --color-scouter-green: #00ff41;
+  --color-power-aura-gold: #ffd700;
+  --color-background-dark: #1a1a2e;
+  --color-accent-red: #e94560;
+  --color-text-light: #ffffff;
+  --color-text-dark: #2c2c2c;
+  --color-background-light: #f5f5f5;
+  
+  /* UI Colors */
+  --color-card-bg: #2d2d44;
+  --color-card-border: #3d3d5c;
+  --color-button-hover: #ff8555;
+  --color-disabled: #666;
+  --color-success: #4caf50;
+  --color-error: #f44336;
+  --color-warning: #ff9800;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-round: 50%;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 20px rgba(255, 215, 0, 0.5);
+  --shadow-glow-intense: 0 0 30px rgba(255, 215, 0, 0.8);
+
+  /* Animation Durations */
+  --duration-fast: 200ms;
+  --duration-normal: 500ms;
+  --duration-slow: 1000ms;
+  --duration-counter: 1500ms;
+  --duration-senzu: 300ms;
+
+  /* Animation Easings */
+  --ease-default: ease;
+  --ease-in: ease-in;
+  --ease-out: ease-out;
+  --ease-in-out: ease-in-out;
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Typography */
+  --font-primary: 'Bangers', 'Arial Black', sans-serif;
+  --font-scouter: 'Orbitron', monospace;
+  --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-md: 1rem;      /* 16px */
+  --font-size-lg: 1.25rem;   /* 20px */
+  --font-size-xl: 1.5rem;    /* 24px */
+  --font-size-xxl: 2rem;     /* 32px */
+  --font-size-huge: 3rem;    /* 48px */
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Z-Index Layers */
+  --z-base: 1;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+
+  /* Breakpoints (for JS usage) */
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-large: 1440px;
+
+  /* Container Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+}
+
+/* Dark Theme (Default) */
+body {
+  --bg-primary: var(--color-background-dark);
+  --bg-secondary: var(--color-card-bg);
+  --text-primary: var(--color-text-light);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+}
+
+/* Light Theme (Optional) */
+body.light-theme {
+  --bg-primary: var(--color-background-light);
+  --bg-secondary: #ffffff;
+  --text-primary: var(--color-text-dark);
+  --text-secondary: rgba(0, 0, 0, 0.7);
+}

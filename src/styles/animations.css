@@ -1,0 +1,195 @@
+/**
+ * Dragon Ball Power-Up Diner
+ * Reusable CSS Animations
+ */
+
+/* Power-Up Glow Animation */
+@keyframes auraGlow {
+  0% {
+    box-shadow: 0 0 5px var(--color-power-aura-gold);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--color-power-aura-gold),
+      0 0 40px var(--color-primary-orange);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--color-power-aura-gold);
+  }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Screen Shake Animation */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+/* Flash Text Animation */
+@keyframes flashText {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade Out Animation */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Slide In From Bottom */
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Slide In From Top */
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Float Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Utility Animation Classes */
+.animate-aura {
+  animation: auraGlow var(--duration-slow) var(--ease-in-out) infinite;
+}
+
+.animate-pulse {
+  animation: pulse var(--duration-normal) var(--ease-in-out) 2;
+}
+
+.animate-shake {
+  animation: shake var(--duration-senzu) var(--ease-in-out);
+}
+
+.animate-flash {
+  animation: flashText 800ms var(--ease-in-out);
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--duration-normal) var(--ease-out);
+}
+
+.animate-fade-out {
+  animation: fadeOut var(--duration-normal) var(--ease-in);
+}
+
+.animate-slide-in-bottom {
+  animation: slideInFromBottom var(--duration-normal) var(--ease-out);
+}
+
+.animate-slide-in-top {
+  animation: slideInFromTop var(--duration-normal) var(--ease-out);
+}
+
+.animate-bounce {
+  animation: bounce var(--duration-slow) var(--ease-default);
+}
+
+.animate-rotate {
+  animation: rotate 2s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
