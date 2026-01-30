@@ -1,0 +1,30 @@
+/**
+ * PowerUpFlash Component Styles
+ */
+
+.flash {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: var(--z-modal);
+  pointer-events: none;
+  animation: flashText 800ms var(--ease-in-out);
+}
+
+.text {
+  font-family: var(--font-primary);
+  font-size: 4rem;
+  color: var(--color-power-aura-gold);
+  text-shadow: 0 0 20px var(--color-primary-orange),
+    0 0 40px var(--color-primary-orange), 0 0 60px var(--color-primary-orange);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 4px;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .text {
+    font-size: 2.5rem;
+  }
+}

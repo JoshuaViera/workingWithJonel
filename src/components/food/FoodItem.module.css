@@ -1,0 +1,163 @@
+/**
+ * FoodItem Component Styles
+ */
+
+.item {
+  position: relative;
+  background: var(--color-card-bg);
+  border: 2px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-default);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.item:hover:not(.disabled) {
+  transform: translateY(-2px) scale(1.02);
+  border-color: var(--color-primary-orange);
+  box-shadow: var(--shadow-md);
+}
+
+.item:focus {
+  outline: 2px solid var(--color-scouter-green);
+  outline-offset: 2px;
+}
+
+.item.selected {
+  border-color: var(--color-scouter-green);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+  background: rgba(0, 255, 65, 0.1);
+}
+
+.item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Rarity Border */
+.rarityBorder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+}
+
+/* Image Container */
+.imageContainer {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: linear-gradient(135deg, #2d2d44 0%, #1a1a2e 100%);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-fast) var(--ease-default);
+}
+
+.item:hover:not(.disabled) .image {
+  transform: scale(1.1);
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff6b35 0%, #e94560 100%);
+}
+
+.emoji {
+  font-size: 2.5rem;
+}
+
+/* Quantity Badge */
+.quantityBadge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: var(--color-scouter-green);
+  color: var(--color-background-dark);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-scouter);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Info Section */
+.info {
+  text-align: center;
+  width: 100%;
+}
+
+.name {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  color: var(--color-text-light);
+  margin: 0 0 var(--spacing-xs) 0;
+  text-transform: uppercase;
+}
+
+.powerBoost {
+  font-family: var(--font-scouter);
+  color: var(--color-power-aura-gold);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-xs);
+}
+
+.price {
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+/* Out of Stock Overlay */
+.outOfStock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+}
+
+.outOfStock span {
+  font-family: var(--font-primary);
+  color: var(--color-accent-red);
+  font-size: var(--font-size-md);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .item {
+    padding: var(--spacing-sm);
+  }
+
+  .imageContainer {
+    width: 60px;
+    height: 60px;
+  }
+
+  .name {
+    font-size: var(--font-size-sm);
+  }
+}
